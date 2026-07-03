@@ -4,36 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TaskFlow</title>
+    <title>TaskFlow - Gerenciador de Tarefas</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body>
 
     <h1>📋 TaskFlow</h1>
+    <h2>Sistema de Gerenciamento de Tarefas</h2>
 
-    <h2>Gerenciamento de Tarefas</h2>
+    <form action="{{ url_for('adicionar') }}" method="POST">
 
-    <form action="/adicionar" method="POST">
+        <label for="titulo">Título</label>
+        <input
+            type="text"
+            id="titulo"
+            name="titulo"
+            placeholder="Digite o título da tarefa"
+            required>
 
-        <label>Título</label><br>
-        <input type="text" name="titulo" required><br><br>
+        <label for="descricao">Descrição</label>
+        <input
+            type="text"
+            id="descricao"
+            name="descricao"
+            placeholder="Digite uma descrição"
+            required>
 
-        <label>Descrição</label><br>
-        <input type="text" name="descricao" required><br><br>
+        <label for="prioridade">Prioridade</label>
 
-        <label>Prioridade</label><br>
-
-        <select name="prioridade">
-
-            <option>Alta</option>
-            <option>Média</option>
-            <option>Baixa</option>
-
+        <select id="prioridade" name="prioridade">
+            <option value="Alta">Alta</option>
+            <option value="Média">Média</option>
+            <option value="Baixa">Baixa</option>
         </select>
 
-        <br><br>
-
-        <button type="submit">Adicionar Tarefa</button>
+        <button type="submit">➕ Adicionar Tarefa</button>
 
     </form>
 
@@ -41,19 +48,42 @@
 
     <h2>Lista de Tarefas</h2>
 
-    {% for tarefa in tarefas %}
+    {% if tarefas %}
 
-        <p>
-            <strong>{{ tarefa.titulo }}</strong><br>
+        {% for tarefa in tarefas %}
 
-            {{ tarefa.descricao }}<br>
+        <div class="task">
 
-            Prioridade: {{ tarefa.prioridade }}
+            <h3>{{ tarefa.titulo }}</h3>
+
+            <p>{{ tarefa.descricao }}</p>
+
+            <p>
+                <strong>Prioridade:</strong>
+                {{ tarefa.prioridade }}
+            </p>
+
+            <a href="{{ url_for('editar', id=tarefa.id) }}">✏️ Editar</a>
+
+            &nbsp;&nbsp;
+
+            <a
+                href="{{ url_for('excluir', id=tarefa.id) }}"
+                onclick="return confirm('Deseja realmente excluir esta tarefa?')">
+                🗑️ Excluir
+            </a>
+
+        </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p style="text-align:center;">
+            Nenhuma tarefa cadastrada.
         </p>
 
-        <hr>
-
-    {% endfor %}
+    {% endif %}
 
 </body>
 

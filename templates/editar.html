@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Tarefa - TaskFlow</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <h1>✏️ Editar Tarefa</h1>
+
+    <form method="POST">
+
+        <label for="titulo">Título</label>
+        <input
+            type="text"
+            id="titulo"
+            name="titulo"
+            value="{{ tarefa.titulo }}"
+            required>
+
+        <label for="descricao">Descrição</label>
+        <input
+            type="text"
+            id="descricao"
+            name="descricao"
+            value="{{ tarefa.descricao }}"
+            required>
+
+        <label for="prioridade">Prioridade</label>
+
+        <select id="prioridade" name="prioridade">
+
+            <option value="Alta"
+                {% if tarefa.prioridade == "Alta" %}selected{% endif %}>
+                Alta
+            </option>
+
+            <option value="Média"
+                {% if tarefa.prioridade == "Média" %}selected{% endif %}>
+                Média
+            </option>
+
+            <option value="Baixa"
+                {% if tarefa.prioridade == "Baixa" %}selected{% endif %}>
+                Baixa
+            </option>
+
+        </select>
+
+        <button type="submit">💾 Salvar Alterações</button>
+
+        <br><br>
+
+        <a href="{{ url_for('inicio') }}">⬅ Voltar para a página inicial</a>
+
+    </form>
+
+</body>
+
+</html>
