@@ -1,47 +1,49 @@
 # 📋 TaskFlow
 
-Sistema web de gerenciamento de tarefas desenvolvido como atividade prática da disciplina de Engenharia de Software da UniFECAF.
+Sistema web para gerenciamento de tarefas desenvolvido com Python e Flask como projeto da disciplina de Engenharia de Software da UniFECAF.
 
-## 📖 Sobre o Projeto
+## 📖 Sobre o projeto
 
-O TaskFlow é uma aplicação web que permite cadastrar, visualizar, editar e excluir tarefas, auxiliando no gerenciamento das atividades de uma equipe utilizando conceitos de metodologias ágeis.
+O TaskFlow foi criado para facilitar o controle de tarefas do dia a dia. O sistema permite cadastrar, editar, visualizar e excluir tarefas, além de acompanhar a prioridade e o status de cada uma.
 
-O projeto foi desenvolvido utilizando boas práticas de Engenharia de Software, incluindo versionamento com Git, hospedagem no GitHub, testes automatizados com Pytest e integração contínua utilizando GitHub Actions.
-
----
-
-# 🎯 Objetivos
-
-- Gerenciar tarefas de forma simples e organizada.
-- Aplicar conceitos de Engenharia de Software.
-- Utilizar metodologia ágil (Kanban).
-- Implementar testes automatizados.
-- Utilizar Integração Contínua (CI) com GitHub Actions.
+Durante o desenvolvimento foram utilizados conceitos de versionamento com Git, hospedagem no GitHub, integração contínua com GitHub Actions e testes automatizados com Pytest.
 
 ---
 
-# 🚀 Tecnologias Utilizadas
+## 🚀 Funcionalidades
 
-- Python 3.13
+- Cadastro de tarefas
+- Edição de tarefas
+- Exclusão de tarefas
+- Definição de prioridade
+- Controle de status
+- Interface web responsiva
+- Testes automatizados
+- Integração contínua com GitHub Actions
+
+---
+
+## 🛠 Tecnologias utilizadas
+
+- Python 3
 - Flask
 - HTML5
 - CSS3
 - Git
 - GitHub
-- Pytest
 - GitHub Actions
+- Pytest
 
 ---
 
-# 📁 Estrutura do Projeto
+## 📂 Estrutura do projeto
 
 ```
-TaskFlow/
+TaskFlow
 │
-├── app.py
-├── requirements.txt
-├── pytest.ini
-├── README.md
+├── .github/
+│   └── workflows/
+│       └── ci.yml
 │
 ├── static/
 │   └── css/
@@ -54,34 +56,35 @@ TaskFlow/
 ├── tests/
 │   └── test_app.py
 │
-└── .github/
-    └── workflows/
-        └── ci.yml
+├── app.py
+├── requirements.txt
+├── pytest.ini
+└── README.md
 ```
 
 ---
 
-# ⚙️ Como executar o projeto
+## ▶️ Como executar o projeto
 
-## 1. Clonar o repositório
+Clone o repositório:
 
 ```bash
 git clone https://github.com/eucarlosz/TaskFlow.git
 ```
 
-## 2. Entrar na pasta
+Entre na pasta:
 
 ```bash
 cd TaskFlow
 ```
 
-## 3. Criar o ambiente virtual
+Crie o ambiente virtual:
 
 ```bash
 python -m venv .venv
 ```
 
-## 4. Ativar o ambiente virtual
+Ative o ambiente:
 
 Windows
 
@@ -89,74 +92,65 @@ Windows
 .venv\Scripts\activate
 ```
 
-## 5. Instalar as dependências
+Instale as dependências:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## 6. Executar o projeto
+Execute a aplicação:
 
 ```bash
 python app.py
 ```
 
----
+Depois acesse:
 
-# ✅ Funcionalidades
-
-- Cadastro de tarefas
-- Listagem de tarefas
-- Edição de tarefas
-- Exclusão de tarefas
-- Definição de prioridade
+```
+http://127.0.0.1:5000
+```
 
 ---
 
-# 🧪 Testes Automatizados
+## 🧪 Testes
 
-O projeto utiliza **Pytest** para validar automaticamente o funcionamento da aplicação.
+Para executar os testes utilize:
 
-Os testes são executados localmente e também pelo GitHub Actions sempre que um novo commit é enviado ao repositório.
-
----
-
-# 🔄 Integração Contínua
-
-Foi configurado um workflow utilizando **GitHub Actions**, responsável por:
-
-- Instalar as dependências do projeto.
-- Executar os testes automatizados.
-- Validar a aplicação a cada novo push.
+```bash
+pytest
+```
 
 ---
 
-# 📋 Metodologia Ágil
+## 📷 Imagens
 
-Durante o desenvolvimento foi utilizado o método **Kanban**, organizando as atividades nas colunas:
+### Tela inicial
 
-- To Do
-- In Progress
-- Done
+*(Adicionar captura de tela do sistema.)*
 
-Essa organização facilitou o acompanhamento da evolução do projeto.
+### Tela de edição
 
----
+*(Adicionar captura de tela da edição.)*
 
-# 🔄 Mudança de Escopo
+### GitHub Actions
 
-Durante o desenvolvimento foi simulada uma alteração no escopo do projeto.
-
-Inicialmente o sistema permitia apenas o gerenciamento básico das tarefas.
-
-Como melhoria, foi planejada a implementação de autenticação de usuários e armazenamento das tarefas em banco de dados SQLite, permitindo maior segurança e persistência das informações.
-
-Essa alteração foi registrada no quadro Kanban e documentada conforme solicitado pela atividade.
+*(Adicionar captura da execução dos testes.)*
 
 ---
 
-# 👨‍💻 Autor
+## 📌 Melhorias futuras
+
+- Login de usuários
+- Banco de dados SQLite
+- Pesquisa de tarefas
+- Filtros por prioridade e status
+- Datas de vencimento
+- Responsáveis pelas tarefas
+
+---
+
+## 👨‍💻 Autor
 
 Carlos Eduardo
 
-Projeto desenvolvido para a disciplina de **Engenharia de Software** — UniFECAF.
+Projeto desenvolvido para a disciplina de Engenharia de Software — UniFECAF.
