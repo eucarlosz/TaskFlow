@@ -4,86 +4,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TaskFlow - Gerenciador de Tarefas</title>
+    <title>TaskFlow</title>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body>
 
-    <h1>📋 TaskFlow</h1>
-    <h2>Sistema de Gerenciamento de Tarefas</h2>
+    <div class="container">
 
-    <form action="{{ url_for('adicionar') }}" method="POST">
+        <h1>📋 TaskFlow</h1>
+        <h2>Gerenciamento de Tarefas</h2>
 
-        <label for="titulo">Título</label>
-        <input
-            type="text"
-            id="titulo"
-            name="titulo"
-            placeholder="Digite o título da tarefa"
-            required>
+        <form action="/adicionar" method="POST">
 
-        <label for="descricao">Descrição</label>
-        <input
-            type="text"
-            id="descricao"
-            name="descricao"
-            placeholder="Digite uma descrição"
-            required>
+            <label for="titulo">Título</label>
+            <input type="text" id="titulo" name="titulo" required>
 
-        <label for="prioridade">Prioridade</label>
+            <label for="descricao">Descrição</label>
+            <input type="text" id="descricao" name="descricao" required>
 
-        <select id="prioridade" name="prioridade">
-            <option value="Alta">Alta</option>
-            <option value="Média">Média</option>
-            <option value="Baixa">Baixa</option>
-        </select>
+            <label for="prioridade">Prioridade</label>
 
-        <button type="submit">➕ Adicionar Tarefa</button>
+            <select id="prioridade" name="prioridade">
+                <option value="Alta">Alta</option>
+                <option value="Média">Média</option>
+                <option value="Baixa">Baixa</option>
+            </select>
 
-    </form>
+            <label for="status">Status</label>
 
-    <hr>
+            <select id="status" name="status">
+                <option value="Pendente">Pendente</option>
+                <option value="Em andamento">Em andamento</option>
+                <option value="Concluída">Concluída</option>
+            </select>
 
-    <h2>Lista de Tarefas</h2>
+            <button type="submit">➕ Adicionar Tarefa</button>
 
-    {% if tarefas %}
+        </form>
 
-        {% for tarefa in tarefas %}
+        <hr>
 
-        <div class="task">
+        <h2>Lista de Tarefas</h2>
 
-            <h3>{{ tarefa.titulo }}</h3>
+        {% if tarefas %}
 
-            <p>{{ tarefa.descricao }}</p>
+            {% for tarefa in tarefas %}
 
-            <p>
-                <strong>Prioridade:</strong>
-                {{ tarefa.prioridade }}
-            </p>
+            <div class="task">
 
-            <a href="{{ url_for('editar', id=tarefa.id) }}">✏️ Editar</a>
+                <h3>{{ tarefa.titulo }}</h3>
 
-            &nbsp;&nbsp;
+                <p>{{ tarefa.descricao }}</p>
 
-            <a
-                href="{{ url_for('excluir', id=tarefa.id) }}"
-                onclick="return confirm('Deseja realmente excluir esta tarefa?')">
-                🗑️ Excluir
-            </a>
+                <p>
+                    <strong>Prioridade:</strong>
 
-        </div>
+                    {% if tarefa.prioridade == "Alta" %}
+                        <span class="alta">Alta</span>
 
-        {% endfor %}
+                    {% elif tarefa.prioridade == "Média" %}
+                        <span class="media">Média</span>
 
-    {% else %}
+                    {% else %}
+                        <span class="baixa">Baixa</span>
 
-        <p style="text-align:center;">
-            Nenhuma tarefa cadastrada.
-        </p>
+                    {% endif %}
+                </p>
 
-    {% endif %}
+                <p>
+                    <strong>Status:</strong>
+
+                    {% if tarefa.status == "Pendente" %}
+                        <span class="pendente">Pendente</span>
+
+                    {% elif tarefa.status == "Em andamento" %}
+                        <span class="andamento">Em andamento</span>
+
+                    {% else %}
+                        <span class="concluida">Concluída</span>
+
+                    {% endif %}
+                </p>
+
+                <div class="acoes">
+                    <a class="editar" href="/editar/{{ tarefa.id }}">✏️ Editar</a>
+                    <a class="excluir" href="/excluir/{{ tarefa.id }}">🗑️ Excluir</a>
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        {% else %}
+
+            <p class="vazio">Nenhuma tarefa cadastrada.</p>
+
+        {% endif %}
+
+    </div>
 
 </body>
 

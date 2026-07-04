@@ -21,12 +21,14 @@ def adicionar():
     titulo = request.form["titulo"]
     descricao = request.form["descricao"]
     prioridade = request.form["prioridade"]
+    status = request.form["status"]
 
     nova_tarefa = {
         "id": contador_id,
         "titulo": titulo,
         "descricao": descricao,
-        "prioridade": prioridade
+        "prioridade": prioridade,
+        "status": status
     }
 
     tarefas.append(nova_tarefa)
@@ -58,6 +60,7 @@ def editar(id):
         tarefa["titulo"] = request.form["titulo"]
         tarefa["descricao"] = request.form["descricao"]
         tarefa["prioridade"] = request.form["prioridade"]
+        tarefa["status"] = request.form["status"]
 
         return redirect(url_for("inicio"))
 
