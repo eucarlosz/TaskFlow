@@ -16,31 +16,74 @@
         <h1>📋 TaskFlow</h1>
         <h2>Gerenciamento de Tarefas</h2>
 
+        <!-- Dashboard -->
+        <div class="dashboard">
+
+            <div class="card">
+                <h3>{{ total }}</h3>
+                <p>Total</p>
+            </div>
+
+            <div class="card">
+                <h3>{{ pendentes }}</h3>
+                <p>Pendentes</p>
+            </div>
+
+            <div class="card">
+                <h3>{{ andamento }}</h3>
+                <p>Em andamento</p>
+            </div>
+
+            <div class="card">
+                <h3>{{ concluidas }}</h3>
+                <p>Concluídas</p>
+            </div>
+
+        </div>
+
+        <!-- Formulário -->
+
         <form action="/adicionar" method="POST">
 
             <label for="titulo">Título</label>
-            <input type="text" id="titulo" name="titulo" required>
+            <input
+                type="text"
+                id="titulo"
+                name="titulo"
+                placeholder="Digite o título da tarefa"
+                required>
 
             <label for="descricao">Descrição</label>
-            <input type="text" id="descricao" name="descricao" required>
+            <input
+                type="text"
+                id="descricao"
+                name="descricao"
+                placeholder="Digite uma descrição"
+                required>
 
             <label for="prioridade">Prioridade</label>
 
             <select id="prioridade" name="prioridade">
+
                 <option value="Alta">Alta</option>
                 <option value="Média">Média</option>
                 <option value="Baixa">Baixa</option>
+
             </select>
 
             <label for="status">Status</label>
 
             <select id="status" name="status">
+
                 <option value="Pendente">Pendente</option>
                 <option value="Em andamento">Em andamento</option>
                 <option value="Concluída">Concluída</option>
+
             </select>
 
-            <button type="submit">➕ Adicionar Tarefa</button>
+            <button type="submit">
+                ➕ Adicionar Tarefa
+            </button>
 
         </form>
 
@@ -59,38 +102,60 @@
                 <p>{{ tarefa.descricao }}</p>
 
                 <p>
+
                     <strong>Prioridade:</strong>
 
                     {% if tarefa.prioridade == "Alta" %}
+
                         <span class="alta">Alta</span>
 
                     {% elif tarefa.prioridade == "Média" %}
+
                         <span class="media">Média</span>
 
                     {% else %}
+
                         <span class="baixa">Baixa</span>
 
                     {% endif %}
+
                 </p>
 
                 <p>
+
                     <strong>Status:</strong>
 
                     {% if tarefa.status == "Pendente" %}
+
                         <span class="pendente">Pendente</span>
 
                     {% elif tarefa.status == "Em andamento" %}
+
                         <span class="andamento">Em andamento</span>
 
                     {% else %}
+
                         <span class="concluida">Concluída</span>
 
                     {% endif %}
+
                 </p>
 
                 <div class="acoes">
-                    <a class="editar" href="/editar/{{ tarefa.id }}">✏️ Editar</a>
-                    <a class="excluir" href="/excluir/{{ tarefa.id }}">🗑️ Excluir</a>
+
+                    <a
+                        class="editar"
+                        href="/editar/{{ tarefa.id }}">
+                        ✏️ Editar
+                    </a>
+
+                    <a
+                        class="excluir"
+                        href="/excluir/{{ tarefa.id }}"
+                        onclick="return confirm('Deseja realmente excluir esta tarefa?');">
+                        🗑️ Excluir
+                    </a>
+
                 </div>
 
             </div>
@@ -99,11 +164,27 @@
 
         {% else %}
 
-            <p class="vazio">Nenhuma tarefa cadastrada.</p>
+            <div class="vazio">
+
+                <h3>📭 Nenhuma tarefa cadastrada</h3>
+
+                <p>
+                    Adicione sua primeira tarefa utilizando o formulário acima.
+                </p>
+
+            </div>
 
         {% endif %}
 
     </div>
+
+    <footer>
+
+        <p>
+            Desenvolvido por <strong>Carlos Eduardo</strong> • TaskFlow © 2026
+        </p>
+
+    </footer>
 
 </body>
 

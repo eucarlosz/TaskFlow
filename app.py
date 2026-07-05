@@ -2,18 +2,33 @@ from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
-# Lista que armazenará as tarefas
 tarefas = []
 contador_id = 1
 
 
-# Página inicial
+def obter_estatisticas():
+    return {
+        "total": len(tarefas),
+        "pendentes": len([t for t in tarefas if t["status"] == "Pendente"]),
+        "andamento": len([t for t in tarefas if t["status"] == "Em andamento"]),
+        "concluidas": len([t for t in tarefas if t["status"] == "Concluída"]),
+    }
+
+
 @app.route("/")
 def inicio():
-    return render_template("index.html", tarefas=tarefas)
+    estatisticas = obter_estatisticas()
+
+    return render_template(
+        "index.html",
+        tarefas=tarefas,
+        total=estatisticas["total"],
+        pendentes=estatisticas["pendentes"],
+        andamento=estatisticas["andamento"],
+        concluidas=estatisticas["concluidas"],
+    )
 
 
-# Adicionar tarefa
 @app.route("/adicionar", methods=["POST"])
 def adicionar():
     global contador_id
@@ -28,7 +43,7 @@ def adicionar():
         "titulo": titulo,
         "descricao": descricao,
         "prioridade": prioridade,
-        "status": status
+        "status": status,
     }
 
     tarefas.append(nova_tarefa)
@@ -37,7 +52,6 @@ def adicionar():
     return redirect(url_for("inicio"))
 
 
-# Excluir tarefa
 @app.route("/excluir/<int:id>")
 def excluir(id):
     global tarefas
@@ -47,7 +61,6 @@ def excluir(id):
     return redirect(url_for("inicio"))
 
 
-# Editar tarefa
 @app.route("/editar/<int:id>", methods=["GET", "POST"])
 def editar(id):
 
