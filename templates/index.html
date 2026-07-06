@@ -16,7 +16,8 @@
         <h1>📋 TaskFlow</h1>
         <h2>Gerenciamento de Tarefas</h2>
 
-        <!-- Dashboard -->
+        <!-- DASHBOARD -->
+
         <div class="dashboard">
 
             <div class="card">
@@ -41,11 +42,46 @@
 
         </div>
 
-        <!-- Formulário -->
+        <div class="filtro">
+
+            <form method="GET">
+
+                <label><strong>Filtrar por Status</strong></label>
+
+                <select name="status" onchange="this.form.submit()">
+
+                    <option value="Todos"
+                        {% if filtro=="Todos" %}selected{% endif %}>
+                        Todas
+                    </option>
+
+                    <option value="Pendente"
+                        {% if filtro=="Pendente" %}selected{% endif %}>
+                        Pendentes
+                    </option>
+
+                    <option value="Em andamento"
+                        {% if filtro=="Em andamento" %}selected{% endif %}>
+                        Em andamento
+                    </option>
+
+                    <option value="Concluída"
+                        {% if filtro=="Concluída" %}selected{% endif %}>
+                        Concluídas
+                    </option>
+
+                </select>
+
+            </form>
+
+        </div>
+
+        <!-- FORMULÁRIO -->
 
         <form action="/adicionar" method="POST">
 
             <label for="titulo">Título</label>
+
             <input
                 type="text"
                 id="titulo"
@@ -54,6 +90,7 @@
                 required>
 
             <label for="descricao">Descrição</label>
+
             <input
                 type="text"
                 id="descricao"
@@ -89,6 +126,8 @@
 
         <hr>
 
+        <!-- LISTA -->
+
         <h2>Lista de Tarefas</h2>
 
         {% if tarefas %}
@@ -106,15 +145,12 @@
                     <strong>Prioridade:</strong>
 
                     {% if tarefa.prioridade == "Alta" %}
-
                         <span class="alta">Alta</span>
 
                     {% elif tarefa.prioridade == "Média" %}
-
                         <span class="media">Média</span>
 
                     {% else %}
-
                         <span class="baixa">Baixa</span>
 
                     {% endif %}
@@ -126,15 +162,12 @@
                     <strong>Status:</strong>
 
                     {% if tarefa.status == "Pendente" %}
-
                         <span class="pendente">Pendente</span>
 
                     {% elif tarefa.status == "Em andamento" %}
-
                         <span class="andamento">Em andamento</span>
 
                     {% else %}
-
                         <span class="concluida">Concluída</span>
 
                     {% endif %}
@@ -145,13 +178,13 @@
 
                     <a
                         class="editar"
-                        href="/editar/{{ tarefa.id }}">
+                        href="{{ url_for('editar', id=tarefa.id) }}">
                         ✏️ Editar
                     </a>
 
                     <a
                         class="excluir"
-                        href="/excluir/{{ tarefa.id }}"
+                        href="{{ url_for('excluir', id=tarefa.id) }}"
                         onclick="return confirm('Deseja realmente excluir esta tarefa?');">
                         🗑️ Excluir
                     </a>

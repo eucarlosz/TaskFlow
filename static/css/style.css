@@ -238,3 +238,33 @@ button:hover{
     color:#555;
 
 }
+
+.filtro{
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:12px;
+
+    margin-bottom:20px;
+
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+
+}
+
+.filtro form{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.filtro select{
+
+    width:220px;
+
+}

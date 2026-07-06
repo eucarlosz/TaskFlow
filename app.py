@@ -17,15 +17,27 @@ def obter_estatisticas():
 
 @app.route("/")
 def inicio():
+
+    filtro = request.args.get("status", "Todos")
+
+    if filtro == "Todos":
+        tarefas_filtradas = tarefas
+    else:
+        tarefas_filtradas = [
+            tarefa for tarefa in tarefas
+            if tarefa["status"] == filtro
+        ]
+
     estatisticas = obter_estatisticas()
 
     return render_template(
         "index.html",
-        tarefas=tarefas,
+        tarefas=tarefas_filtradas,
         total=estatisticas["total"],
         pendentes=estatisticas["pendentes"],
         andamento=estatisticas["andamento"],
         concluidas=estatisticas["concluidas"],
+        filtro=filtro
     )
 
 
