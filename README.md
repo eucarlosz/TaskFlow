@@ -282,3 +282,11 @@ Seu uso é permitido apenas para estudos e aprendizado.
 ## ⭐ Gostou do projeto?
 
 Se este projeto foi útil para você, deixe uma ⭐ no repositório.
+
+## 🔄 Gestão de Mudanças
+
+Durante o desenvolvimento do projeto foi identificada a necessidade de melhorar a organização das tarefas cadastradas.
+
+Inicialmente, o sistema contemplava apenas as operações básicas de cadastro, edição, visualização e exclusão de tarefas. Após a análise do fluxo de utilização, foi definida como mudança de escopo a inclusão do controle de prioridade das tarefas, permitindo que atividades mais importantes fossem identificadas com maior facilidade.
+
+Essa alteração foi registrada no quadro Kanban do GitHub, onde foi criado um novo card representando a funcionalidade, demonstrando a adaptação do planejamento durante o desenvolvimento, conforme os princípios das metodologias ágeis.
