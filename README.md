@@ -1,292 +1,233 @@
 # 📋 TaskFlow
 
-![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Flask](https://img.shields.io/badge/Flask-Web%20Application-000000?style=for-the-badge&logo=flask)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-CI-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)
-![Pytest](https://img.shields.io/badge/Pytest-Testes-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white)
+Sistema web de gerenciamento de tarefas desenvolvido com **Python e Flask**, criado para aplicar na prática conceitos de desenvolvimento Back-end, CRUD, testes automatizados e integração contínua.
 
-Sistema web para gerenciamento de tarefas desenvolvido com **Python** e **Flask**, como projeto da disciplina de **Engenharia de Software da UniFECAF**.
+O projeto permite criar, visualizar, atualizar e excluir tarefas por meio de uma interface web simples e funcional.
 
 ---
 
-# 📑 Índice
+## 💻 Sobre o projeto
 
-- 📖 Sobre o projeto
-- 🎯 Objetivos
-- 🚀 Funcionalidades
-- 🛠 Tecnologias utilizadas
-- 📂 Estrutura do projeto
-- ⚙️ Como executar
-- 🧪 Testes automatizados
-- 📷 Capturas de tela
-- 🔄 Fluxo da aplicação
-- 📌 Melhorias futuras
-- 👨‍💻 Autor
-- 📄 Licença
+O **TaskFlow** foi desenvolvido como projeto de estudo para explorar o funcionamento de uma aplicação web utilizando Python no Back-end.
+
+Além das funcionalidades de gerenciamento de tarefas, o projeto utiliza uma estrutura organizada com templates, arquivos estáticos, testes automatizados e workflow de CI.
+
+O objetivo foi ir além da lógica isolada em Python e compreender melhor como diferentes partes de uma aplicação web trabalham juntas.
 
 ---
 
-# 📖 Sobre o projeto
+## ✨ Funcionalidades
 
-O **TaskFlow** é uma aplicação web desenvolvida para facilitar o gerenciamento de tarefas do dia a dia.
-
-O sistema permite cadastrar, visualizar, editar e excluir tarefas de maneira simples e intuitiva, proporcionando uma melhor organização das atividades.
-
-Além das funcionalidades da aplicação, o projeto também demonstra boas práticas de desenvolvimento de software, utilizando:
-
-- Versionamento com Git;
-- Hospedagem do código no GitHub;
-- Integração Contínua (CI) com GitHub Actions;
-- Testes automatizados utilizando Pytest.
-
-Este projeto foi desenvolvido como atividade prática da disciplina de **Engenharia de Software** da **UniFECAF**.
+* ➕ Cadastro de tarefas
+* 📋 Visualização das tarefas cadastradas
+* ✏️ Atualização de tarefas
+* 🗑️ Exclusão de tarefas
+* 🔄 Operações CRUD
+* 🌐 Interface web
+* 🧪 Testes automatizados
+* ⚙️ Integração contínua com GitHub Actions
 
 ---
 
-# 🎯 Objetivos
+## 🛠️ Tecnologias
 
-- Desenvolver uma aplicação web utilizando Flask;
-- Aplicar conceitos de CRUD;
-- Utilizar Git e GitHub no controle de versões;
-- Automatizar testes utilizando GitHub Actions;
-- Praticar boas práticas de desenvolvimento.
+<p>
+  <img alt="Python" width="45" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"/>
+  &nbsp;
+  <img alt="Flask" width="45" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg"/>
+  &nbsp;
+  <img alt="HTML5" width="45" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"/>
+  &nbsp;
+  <img alt="CSS3" width="45" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"/>
+  &nbsp;
+  <img alt="Git" width="45" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"/>
+  &nbsp;
+  <img alt="GitHub" width="45" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"/>
+</p>
 
----
+**Principais tecnologias e ferramentas:**
 
-# 🚀 Funcionalidades
-
-- ✅ Cadastro de tarefas
-- ✅ Visualização das tarefas cadastradas
-- ✅ Edição de tarefas
-- ✅ Exclusão de tarefas
-- ✅ Definição de prioridade
-- ✅ Controle de status
-- ✅ Interface simples e responsiva
-- ✅ Testes automatizados
-- ✅ Integração contínua com GitHub Actions
-
----
-
-# 🛠 Tecnologias Utilizadas
-
-| Tecnologia | Finalidade |
-|------------|------------|
-| Python 3 | Linguagem principal |
-| Flask | Framework Web |
-| HTML5 | Estrutura das páginas |
-| CSS3 | Estilização |
-| Git | Controle de versão |
-| GitHub | Hospedagem do projeto |
-| GitHub Actions | Integração Contínua (CI) |
-| Pytest | Testes automatizados |
+* Python
+* Flask
+* HTML5
+* CSS3
+* Pytest
+* Git
+* GitHub
+* GitHub Actions
 
 ---
 
-# 📂 Estrutura do Projeto
+## 🧠 Conceitos aplicados
 
-```text
-TaskFlow
+Durante o desenvolvimento foram praticados conceitos como:
+
+* Desenvolvimento Back-end com Python
+* Rotas com Flask
+* Operações CRUD
+* Requisições HTTP
+* Templates HTML
+* Organização de arquivos estáticos
+* Estruturação de aplicações web
+* Testes automatizados com Pytest
+* Controle de versão com Git
+* Integração contínua (CI)
+* GitHub Actions
+
+---
+
+## 📁 Estrutura do projeto
+
+```text id="l5ey6o"
+TaskFlow/
 │
 ├── .github/
 │   └── workflows/
-│       └── ci.yml
 │
 ├── static/
 │   └── css/
-│       └── style.css
 │
 ├── templates/
-│   ├── index.html
-│   └── editar.html
 │
 ├── tests/
-│   └── test_app.py
-│
-├── prints/
-│   ├── tela-inicial.png
-│   ├── sistema.png
-│   ├── edicao.png
-│   ├── github-actions.png
-│   └── github-project.png
 │
 ├── app.py
-├── requirements.txt
 ├── pytest.ini
+├── requirements.txt
+├── .gitignore
 └── README.md
 ```
 
 ---
 
-# ⚙️ Como Executar o Projeto
+## ⚙️ Como executar
 
-### 1️⃣ Clone o repositório
+### 1. Clone o repositório
 
-```bash
+```bash id="5j8b0f"
 git clone https://github.com/eucarlosz/TaskFlow.git
 ```
 
-### 2️⃣ Entre na pasta
+### 2. Entre na pasta
 
-```bash
+```bash id="xvtegg"
 cd TaskFlow
 ```
 
-### 3️⃣ Crie o ambiente virtual
+### 3. Crie um ambiente virtual
 
-```bash
+```bash id="7ec9bf"
 python -m venv .venv
 ```
 
-### 4️⃣ Ative o ambiente
+### 4. Ative o ambiente virtual
 
-Windows
+**Windows:**
 
-```bash
+```bash id="4rxbpj"
 .venv\Scripts\activate
 ```
 
-Linux / macOS
+**Linux/macOS:**
 
-```bash
+```bash id="6kcx44"
 source .venv/bin/activate
 ```
 
-### 5️⃣ Instale as dependências
+### 5. Instale as dependências
 
-```bash
+```bash id="tvl95u"
 pip install -r requirements.txt
 ```
 
-### 6️⃣ Execute a aplicação
+### 6. Execute a aplicação
 
-```bash
+```bash id="fv3xj9"
 python app.py
 ```
 
-Depois acesse:
-
-```
-http://127.0.0.1:5000
-```
+Depois, acesse no navegador o endereço informado pelo Flask no terminal.
 
 ---
 
-# 🧪 Testes Automatizados
+## 🧪 Testes
+
+O projeto utiliza **Pytest** para execução de testes automatizados.
 
 Para executar os testes:
 
-```bash
+```bash id="6evvm3"
 pytest
 ```
 
-Caso todos os testes sejam executados corretamente, será exibida uma saída semelhante a:
+Os testes ajudam a verificar o comportamento da aplicação e reduzir o risco de alterações quebrarem funcionalidades existentes.
 
-```text
-================== test session starts ==================
+---
 
-4 passed in 0.40s
+## ⚙️ Integração Contínua
 
-================== tests passed =========================
+O projeto possui um workflow configurado com **GitHub Actions**.
+
+A automação permite executar verificações do projeto no GitHub, adicionando uma camada de validação ao processo de desenvolvimento.
+
+O workflow está localizado em:
+
+```text id="a7bz5a"
+.github/workflows/
 ```
 
 ---
 
-# 📷 Capturas de Tela
+## 📸 Interface
 
-## 🏠 Tela Inicial
+As capturas de tela da aplicação podem ser adicionadas nesta seção para demonstrar visualmente o funcionamento do TaskFlow.
 
-![Tela Inicial](images/print%201.png)
-
----
-
-## 📋 Sistema com Tarefas
-
-![Sistema](images/tarefas-cadastradas.png)
-
----
-
-## ✏️ Tela de Edição
-
-![Tela de Edição](images/editar-tarefa.png)
-
----
-
-## ⚙️ GitHub Actions
-
-![GitHub Actions](images/print%204.png)
-
----
-
-## 📌 GitHub Project (Kanban)
-
-![GitHub Project](images/print%205.png)
-
----
-
-# 🔄 Fluxo da Aplicação
-
-```text
-Usuário
-    │
-    ▼
-Interface Web
-(HTML + CSS)
-    │
-    ▼
-Flask
-    │
-    ▼
-Python
-    │
-    ▼
-Gerenciamento das tarefas
+```html id="w8ilvc"
+<p align="center">
+  <img src="./images/home.png" alt="TaskFlow - Página inicial" width="900">
+</p>
 ```
 
----
-
-# 📌 Melhorias Futuras
-
-- Sistema de login
-- Banco de dados SQLite
-- Banco de dados MySQL
-- Pesquisa de tarefas
-- Filtros por prioridade
-- Datas de vencimento
-- Responsáveis pelas tarefas
-- Categorias
-- Dashboard com estatísticas
-- Responsividade aprimorada
+> Ajuste o nome acima para corresponder exatamente ao arquivo existente na pasta `images`.
 
 ---
 
-# 👨‍💻 Autor
+## 🎯 Objetivo do projeto
+
+O principal objetivo do TaskFlow foi aplicar conhecimentos de **Python em uma aplicação web**, conectando lógica de programação, rotas, interface e operações CRUD.
+
+A inclusão de **testes automatizados e integração contínua** também permitiu explorar práticas importantes utilizadas no desenvolvimento de software além da implementação das funcionalidades.
+
+---
+
+## 🚀 Possíveis evoluções
+
+Como projeto de estudo, o TaskFlow ainda pode evoluir com funcionalidades como:
+
+* Persistência em banco de dados
+* Sistema de usuários
+* Autenticação
+* Priorização de tarefas
+* Datas e prazos
+* API REST
+* Deploy
+
+Esses itens representam possibilidades futuras e **não funcionalidades atuais do projeto**.
+
+---
+
+## 👨‍💻 Autor
 
 **Carlos Eduardo**
 
-Desenvolvedor em formação, estudante de Engenharia de Software, com foco em desenvolvimento de aplicações utilizando Python, Flask, HTML, CSS e boas práticas de versionamento com Git e GitHub.
+Estudante de **Análise e Desenvolvimento de Sistemas — UniFECAF**
 
-Projeto desenvolvido para a disciplina de **Engenharia de Software** da **UniFECAF**.
+<p>
+  <a href="https://www.linkedin.com/in/carloseduardocostaf/">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
+  </a>
 
----
-
-# 📄 Licença
-
-Este projeto foi desenvolvido exclusivamente para fins acadêmicos como atividade da disciplina de Engenharia de Software da UniFECAF.
-
-Seu uso é permitido apenas para estudos e aprendizado.
-
----
-
-## ⭐ Gostou do projeto?
-
-Se este projeto foi útil para você, deixe uma ⭐ no repositório.
-
-## 🔄 Gestão de Mudanças
-
-Durante o desenvolvimento do projeto foi identificada a necessidade de melhorar a organização das tarefas cadastradas.
-
-Inicialmente, o sistema contemplava apenas as operações básicas de cadastro, edição, visualização e exclusão de tarefas. Após a análise do fluxo de utilização, foi definida como mudança de escopo a inclusão do controle de prioridade das tarefas, permitindo que atividades mais importantes fossem identificadas com maior facilidade.
-
-Essa alteração foi registrada no quadro Kanban do GitHub, onde foi criado um novo card representando a funcionalidade, demonstrando a adaptação do planejamento durante o desenvolvimento, conforme os princípios das metodologias ágeis.
+  <a href="https://github.com/eucarlosz">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
+  </a>
+</p>
